@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua Quest: Hydro Heroes</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <div class="background-image">
+        <div class="container">
+            <header>
+                <div class="title-box"> <!-- Added title-box class -->
+                    <h1 class="game-title">Aqua Quest: Hydro Heroes</h1>
+                </div>
+            </header>
+            <main>
+                <div id="instructions" class="panel">
+                    <h2>Instructions</h2>
+                    <p>Welcome to the Water Conservation Game! You are the town manager responsible for managing water resources and preventing a water shortage crisis. Each day, you'll receive a report on water usage and availability. Take actions to manage water usage and earn points. Prevent a water shortage crisis to win!</p>
+                    <button id="start-btn">Start Game</button>
+                </div>
+                <div id="game-panel" class="panel hidden">
+                    <h2>Game Status</h2>
+                    <p>Days Remaining: <span id="days-remaining">30</span></p>
+                    <p>Water Resources: <span id="water-resources">1000</span> liters</p>
+                    <p>Points: <span id="points">0</span></p>
+                    <div id="actions">
+                        <button id="action-1" class="action-btn" data-amount="50" data-points="10">Promote water-saving practices</button>
+                        <button id="action-2" class="action-btn" data-amount="-100" data-points="20">Implement water restrictions</button>
+                        <button id="action-3" class="action-btn" data-amount="20" data-points="5">Fix leaks</button>
+                        <button id="action-help" class="action-btn" data-amount="0" data-points="0">Help</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Adding audio element -->
+    <audio id="audioPlayer" src="C:/Users/LENOVO/Downloads/Water Conservation Song Final.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="message" class="message hidden"></div> <!-- Message box -->
+    <button id="next-btn" class="hidden">Next</button> <!-- Next button -->
+    
+    <div class="water-meter-container">
+        <meter id="water-meter" min="0" max="1000" value="500" class="water-meter">1000 liters</meter>
+    </div>
+    
+    <!-- Play button -->
+    <button id="play-btn">Play</button>
+
+    <script src="app6.js"></script>
+    <script>
+        // JavaScript to handle play button functionality
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playButton = document.getElementById('play-btn');
+
+        playButton.addEventListener('click', function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playButton.textContent = 'Pause';
+            } else {
+                audioPlayer.pause();
+                playButton.textContent = 'Play';
+            }
+        });
+    </script>
+</body>
+</html>
